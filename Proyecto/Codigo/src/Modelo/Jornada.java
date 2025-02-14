@@ -5,15 +5,17 @@ import java.util.ArrayList;
 public class Jornada {
     private String idJornada;
     private String fecha;
+    private Campeonato campeonato;
     private ArrayList <Enfrentamiento> listaEnfrentamientos;
 
     public Jornada() {
     }
 
-    public Jornada(ArrayList<Enfrentamiento> listaEnfrentamientos, String fecha, String idJornada) {
-        this.listaEnfrentamientos = listaEnfrentamientos;
-        this.fecha = fecha;
+    public Jornada(String idJornada, String fecha, Campeonato campeonato, ArrayList<Enfrentamiento> listaEnfrentamientos) {
         this.idJornada = idJornada;
+        this.fecha = fecha;
+        this.campeonato = campeonato;
+        this.listaEnfrentamientos = listaEnfrentamientos;
     }
 
     public String getIdJornada() {
@@ -30,6 +32,14 @@ public class Jornada {
 
     public void setFecha(String fecha) {
         this.fecha = fecha;
+    }
+
+    public Campeonato getCampeonato() {
+        return campeonato;
+    }
+
+    public void setCampeonato(Campeonato campeonato) {
+        this.campeonato = campeonato;
     }
 
     public ArrayList<Enfrentamiento> getListaEnfrentamientos() {

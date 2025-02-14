@@ -1,58 +1,69 @@
 package Modelo;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 public class Enfrentamiento {
-    private String id_enfrentamiento;
-    private String fecha_enfrentamiento;
-    private String hora_enfrentamiento;
-    private Equipo[] listaEquipos;
+    private String idEnfrentamiento;
+    private LocalDate fechEnfrentamiento;
+    private LocalTime horaEnfrentamiento;
+    private Equipo equipoAtacante;
+    private Equipo equipoDefensor;
     private Jornada jornada;
     private Equipo EquipoGanador;
-    private int[] puntuaciones;
 
     public Enfrentamiento() {
 
     }
 
-    public Enfrentamiento(String id_enfrentamiento, String fecha_enfrentamiento, String hora_enfrentamiento, Equipo[] listaEquipos, Jornada jornada, Equipo equipoGanador, int[] puntuaciones) {
-        this.id_enfrentamiento = id_enfrentamiento;
-        this.fecha_enfrentamiento = fecha_enfrentamiento;
-        this.hora_enfrentamiento = hora_enfrentamiento;
-        this.listaEquipos = listaEquipos;
+    public Enfrentamiento(String idEnfrentamiento, LocalDate fechEnfrentamiento, LocalTime horaEnfrentamiento, Equipo equipoAtacante, Equipo equipoDefensor, Jornada jornada, Equipo equipoGanador) {
+        this.idEnfrentamiento = idEnfrentamiento;
+        this.fechEnfrentamiento = fechEnfrentamiento;
+        this.horaEnfrentamiento = horaEnfrentamiento;
+        this.equipoAtacante = equipoAtacante;
+        this.equipoDefensor = equipoDefensor;
         this.jornada = jornada;
         EquipoGanador = equipoGanador;
-        this.puntuaciones = puntuaciones;
     }
 
-    public String getId_enfrentamiento() {
-        return id_enfrentamiento;
+    public String getIdEnfrentamiento() {
+        return idEnfrentamiento;
     }
 
-    public void setId_enfrentamiento(String id_enfrentamiento) {
-        this.id_enfrentamiento = id_enfrentamiento;
+    public void setIdEnfrentamiento(String idEnfrentamiento) {
+        this.idEnfrentamiento = idEnfrentamiento;
     }
 
-    public String getFecha_enfrentamiento() {
-        return fecha_enfrentamiento;
+    public LocalDate getFechEnfrentamiento() {
+        return fechEnfrentamiento;
     }
 
-    public void setFecha_enfrentamiento(String fecha_enfrentamiento) {
-        this.fecha_enfrentamiento = fecha_enfrentamiento;
+    public void setFechEnfrentamiento(LocalDate fechEnfrentamiento) {
+        this.fechEnfrentamiento = fechEnfrentamiento;
     }
 
-    public String getHora_enfrentamiento() {
-        return hora_enfrentamiento;
+    public LocalTime getHoraEnfrentamiento() {
+        return horaEnfrentamiento;
     }
 
-    public void setHora_enfrentamiento(String hora_enfrentamiento) {
-        this.hora_enfrentamiento = hora_enfrentamiento;
+    public void setHoraEnfrentamiento(LocalTime horaEnfrentamiento) {
+        this.horaEnfrentamiento = horaEnfrentamiento;
     }
 
-    public Equipo[] getListaEquipos() {
-        return listaEquipos;
+    public Equipo getEquipoAtacante() {
+        return equipoAtacante;
     }
 
-    public void setListaEquipos(Equipo[] listaEquipos) {
-        this.listaEquipos = listaEquipos;
+    public void setEquipoAtacante(Equipo equipoAtacante) {
+        this.equipoAtacante = equipoAtacante;
+    }
+
+    public Equipo getEquipoDefensor() {
+        return equipoDefensor;
+    }
+
+    public void setEquipoDefensor(Equipo equipoDefensor) {
+        this.equipoDefensor = equipoDefensor;
     }
 
     public Jornada getJornada() {
@@ -71,11 +82,4 @@ public class Enfrentamiento {
         EquipoGanador = equipoGanador;
     }
 
-    public int[] getPuntuaciones() {
-        return puntuaciones;
-    }
-
-    public void setPuntuaciones(int[] puntuaciones) {
-        this.puntuaciones = puntuaciones;
-    }
 }
