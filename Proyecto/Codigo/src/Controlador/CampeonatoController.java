@@ -1,19 +1,42 @@
 package Controlador;
 
+import Modelo.Campeonato;
+import Modelo.CampeonatoDao;
+
 import javax.swing.*;
+import java.time.LocalDate;
 
 public class CampeonatoController {
-    public void generarCampeonato(){
+    public void generarCampeonato() {
         boolean continuar = false;
         do {
-            try{
-               JOptionPane.showMessageDialog(null, "cual sera la id del campeonato");
+            try {
+                String id = JOptionPane.showInputDialog("Ingrese la ID del campeonato:");
+                String nombre = JOptionPane.showInputDialog("Ingrese el nombre del campeonato:");
+                LocalDate fechaInicio = LocalDate.now(); // Puedes modificarlo según necesidad
 
+                // Array con los estados válidos
+                String[] estadosValidos = {"Inscripción", "Curso", "Finalizado"};
+
+                // Seleccionar estado
+                String estadoSeleccionado = (String) JOptionPane.showInputDialog(
+                        null, "Seleccione el estado del campeonato:",
+                        "Estado", JOptionPane.QUESTION_MESSAGE,
+                        null, estadosValidos, estadosValidos[0]);
+
+                Campeonato campeonato = new Campeonato(id, nombre, fechaInicio, estadoSeleccionado);
+                CampeonatoDao.agregarCampeonato(campeonato);
+                JOptionPane.showMessageDialog(null, "Campeonato creado:\n" +
+                        "ID: " + campeonato.getID() + "\n" +
+                        "Nombre: " + campeonato.getNombre() + "\n" +
+                        "Fecha de inicio: " + campeonato.getFecha_inicio() + "\n" +
+                        "Estado: " + campeonato.getEstado());
+
+                continuar = true;
+
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Error al generar el campeonato: " + e.getMessage());
             }
-            catch(Exception e){
-                JOptionPane.showMessageDialog(null,"Error al generar el campeonato");
-            }
-        }
-        while(!continuar);
+        } while (!continuar);
     }
 }
