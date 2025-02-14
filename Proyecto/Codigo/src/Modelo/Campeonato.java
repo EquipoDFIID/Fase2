@@ -9,14 +9,13 @@ public class Campeonato {
     private LocalDate Fecha_inicio;
     private String estado;
 
-    // Array con los estados válidos
     private static final String[] ESTADOS_VALIDOS = {"Inscripción", "Curso", "Finalizado"};
 
     public Campeonato(String ID, String nombre, LocalDate fecha_inicio, String estado) {
         this.ID = ID;
         Nombre = nombre;
         Fecha_inicio = fecha_inicio;
-        setEstado(estado); // Se usa el setter para validar el estado
+        setEstado(estado);
     }
 
     public String getID() {
@@ -48,7 +47,6 @@ public class Campeonato {
     }
 
     public void setEstado(String estado) {
-        // Validar si el estado está en el array de estados válidos
         if (Arrays.asList(ESTADOS_VALIDOS).contains(estado)) {
             this.estado = estado;
         } else {

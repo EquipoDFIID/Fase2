@@ -15,10 +15,8 @@ public class CampeonatoController {
                 String nombre = JOptionPane.showInputDialog("Ingrese el nombre del campeonato:");
                 LocalDate fechaInicio = LocalDate.now(); // Puedes modificarlo según necesidad
 
-                // Array con los estados válidos
                 String[] estadosValidos = {"Inscripción", "Curso", "Finalizado"};
 
-                // Seleccionar estado
                 String estadoSeleccionado = (String) JOptionPane.showInputDialog(
                         null, "Seleccione el estado del campeonato:",
                         "Estado", JOptionPane.QUESTION_MESSAGE,
