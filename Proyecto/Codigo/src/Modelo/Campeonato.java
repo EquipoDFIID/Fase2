@@ -11,6 +11,9 @@ public class Campeonato {
 
     private static final String[] ESTADOS_VALIDOS = {"Inscripción", "Curso", "Finalizado"};
 
+    public Campeonato() {
+    }
+
     public Campeonato(String ID, String nombre, LocalDate fecha_inicio, String estado) {
         this.ID = ID;
         Nombre = nombre;

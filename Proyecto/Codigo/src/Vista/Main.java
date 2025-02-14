@@ -34,7 +34,7 @@ public class Main {
         enfrentamientoController = new EnfrentamientoController(enfrentamientoDAO);
 
         JornadaDAO jornadaDAO = new JornadaDAO();
-        jornadaController = new JornadaController(jornadaDAO);
+        jornadaController = new JornadaController();
     }
 
     public static void mostrarMenu()
@@ -87,7 +87,7 @@ public class Main {
                     JOptionPane.showMessageDialog(null, "Opcion no existe");
             }
         }
-        while(opcion != 11);
+        while(opcion != 9);
 
     }
 }
