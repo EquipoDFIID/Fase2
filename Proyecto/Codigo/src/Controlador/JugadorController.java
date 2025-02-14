@@ -18,7 +18,7 @@ public class JugadorController {
 
     public static Jugador solicitarValidarDatos() {
         // Copia de la versión anterior.
-        String idJugador = solicitarDato("ID Jugador", "Teclea el equipo al que pertenece", "^[0-9]{4}[A-Z]{1}$");
+        String idJugador = solicitarDato("ID Jugador", "Teclea ID del jugador", "^[0-9]{4}[A-Z]{1}$");
         String nombre = solicitarDato("Nombre", "Teclea el nombre del jugador", "^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\\s]*$");
         String apellido = solicitarDato("Apellido","Teclea el apellido del jugador","^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ\\s]*$");
         String nacionalidad = solicitarDato("Nacionalidad","Teclea la nacionalidad del jugador","^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ]*$");
